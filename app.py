@@ -59,19 +59,17 @@ col4.metric(
 st.subheader("🚀What do you want to do?")
 
 col1,col2,col3 = st.columns(3)
-
 with col1:
     if st.button("📄 Analyze Resume", use_container_width=True):
-        st.switch_page("pages/Resume_Analyzer.py")
+        st.switch_page("pages/resume_analyzer.py")
 
 with col2:
     if st.button("🎯 Match With Job", use_container_width=True):
-        st.switch_page("pages/Job_Matcher.py")
+        st.switch_page("pages/job_matcher.py")
 
 with col3:
     if st.button("📊 Find Skill Gaps", use_container_width=True):
-        st.switch_page("pages/Skill_Gap.py")
-
+        st.switch_page("pages/skill_gap.py")
 st.divider()
 
 # ==================================================
