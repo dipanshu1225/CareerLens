@@ -85,7 +85,6 @@ st.write(
 
 with st.container(border=True):
 
-    st.subheader("🤖 CareerLens Assistant")
 
     st.write(
         "👋 Hi! I'm CareerLens AI."
