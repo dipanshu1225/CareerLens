@@ -1,9 +1,11 @@
 import os
 import streamlit as st
 from dotenv import load_dotenv
+from google import genai
 
 load_dotenv()
 
+# Get API key from local .env or Streamlit Cloud Secrets
 api_key = os.getenv("GEMINI_API_KEY")
 
 if not api_key:
@@ -15,39 +17,36 @@ if not api_key:
 if not api_key:
     raise ValueError("GEMINI_API_KEY is missing.")
 
+# Gemini client
+client = genai.Client(api_key=api_key)
+
+
 def ask_career_ai(question):
 
-    response = client.chat.completions.create(
-        model="gemini-3.6-flash",
+    prompt = f"""
+You are CareerLens AI, a helpful career assistant.
 
-        messages=[
-            {
-                "role": "system",
-                "content": """
-You are CareerLens AI, a professional career assistant.
-
-Help users with:
+Help the user with:
 - Resume improvement
-- Job matching
+- Job searching
 - Career planning
-- Skill gaps
-- Data Analytics
+- Skill development
 - Interview preparation
+- Job descriptions
+- Data Science
+- Data Analytics
 - Python
-- SQL
-- Power BI
+- AI and Machine Learning
 
-Give practical, concise and professional answers.
-Keep responses under 500 words unless the user asks for more detail.
+Give practical, clear and beginner-friendly answers.
+
+User question:
+{question}
 """
-            },
-            {
-                "role": "user",
-                "content": question
-            }
-        ],
 
-        max_tokens=2000
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt
     )
 
-    return response.choices[0].message.content
+    return response.text
