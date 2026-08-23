@@ -1,6 +1,6 @@
 import streamlit as st
 from pypdf import PdfReader
-from utils.parser import extract_text_from_pdf, detect_skills 
+from utils.parser import extract_text_from_pdf, detect_skills, detect_experience 
 
 #for style css
 with open("style.css") as f:
@@ -44,6 +44,8 @@ if uploaded_file:
     # Detect skills
     found_skills = detect_skills(resume_text)
     
+    #Detect experiance
+    experience = detect_experience(resume_text)
 
     st.divider()   
 #================================================================
