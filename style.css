@@ -1385,3 +1385,16 @@ div[data-testid="stFileUploaderDropzone"] {
     min-height: 100px;
     border-radius: 10px;
 }
+/* Job Matcher Input Alignment */
+
+div[data-testid="stFileUploaderDropzone"] {
+    min-height: 100px !important;
+    height: 100px !important;
+    box-sizing: border-box;
+}
+
+div[data-testid="stSelectbox"] div[role="combobox"] {
+    min-height: 48px !important;
+    height: 48px !important;
+    box-sizing: border-box;
+}
