@@ -1165,3 +1165,7 @@ section[data-testid="stSidebar"] h3 {
 [data-testid="stChatInput"] textarea::placeholder {
     color: #64748b !important;
 }
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] li {
+    color: #1e293b !important;
+}
