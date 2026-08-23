@@ -51,6 +51,7 @@ with col2:
             "AI/ML Engineer",
             "Business Analyst"
         ]
+        border=True,
     )
 
 st.write("")
