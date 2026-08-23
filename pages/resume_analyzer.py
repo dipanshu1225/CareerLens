@@ -1,7 +1,6 @@
 import streamlit as st
 from pypdf import PdfReader
-from utils.parser import extract_text_from_pdf, detect_skills
-import re
+from utils.parser import (extract_text_from_pdf, detect_skills,detect_experience)
 
 #for style css
 with open("style.css") as f:
