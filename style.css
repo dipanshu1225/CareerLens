@@ -1169,3 +1169,182 @@ section[data-testid="stSidebar"] h3 {
 [data-testid="stChatMessage"] li {
     color: #1e293b !important;
 }
+/* =========================================================
+   CAREERLENS AI CHAT — VISIBILITY & READABILITY FIX
+   ========================================================= */
+
+/* Chat message container */
+[data-testid="stChatMessage"] {
+    background: var(--white) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    padding: 18px 20px !important;
+    margin: 10px 0 !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* ALL normal chatbot text */
+[data-testid="stChatMessage"] p {
+    color: var(--ink) !important;
+    font-family: var(--font-body) !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+}
+
+/* Chat headings */
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3,
+[data-testid="stChatMessage"] h4,
+[data-testid="stChatMessage"] h5,
+[data-testid="stChatMessage"] h6 {
+    color: var(--ink) !important;
+    font-family: var(--font-display) !important;
+    margin-top: 14px !important;
+    margin-bottom: 8px !important;
+}
+
+/* Bold text */
+[data-testid="stChatMessage"] strong,
+[data-testid="stChatMessage"] b {
+    color: var(--ink) !important;
+    font-weight: 700 !important;
+}
+
+/* Bullet lists */
+[data-testid="stChatMessage"] ul,
+[data-testid="stChatMessage"] ol {
+    color: var(--ink) !important;
+    padding-left: 25px !important;
+}
+
+/* List items */
+[data-testid="stChatMessage"] li {
+    color: var(--ink) !important;
+    line-height: 1.7 !important;
+    margin-bottom: 7px !important;
+}
+
+/* Bullet numbers / dots */
+[data-testid="stChatMessage"] li::marker {
+    color: var(--brass-dark) !important;
+    font-weight: 700 !important;
+}
+
+/* Links inside AI response */
+[data-testid="stChatMessage"] a {
+    color: var(--indigo) !important;
+    font-weight: 600 !important;
+}
+
+/* Inline code */
+[data-testid="stChatMessage"] code {
+    background: var(--indigo-light) !important;
+    color: var(--indigo-dark) !important;
+    padding: 3px 7px !important;
+    border-radius: 4px !important;
+    font-family: var(--font-mono) !important;
+}
+
+/* Code blocks */
+[data-testid="stChatMessage"] pre {
+    background: var(--ink) !important;
+    color: var(--paper) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    overflow-x: auto !important;
+}
+
+[data-testid="stChatMessage"] pre code {
+    background: transparent !important;
+    color: var(--paper) !important;
+}
+
+/* =========================================================
+   CHAT INPUT
+   ========================================================= */
+
+[data-testid="stChatInput"] {
+    background: var(--white) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+}
+
+[data-testid="stChatInput"] textarea {
+    background: var(--white) !important;
+    color: var(--ink) !important;
+    font-family: var(--font-body) !important;
+    font-size: 15px !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder {
+    color: var(--muted-cool) !important;
+    opacity: 1 !important;
+}
+
+/* Chat input focus */
+[data-testid="stChatInput"]:focus-within {
+    border-color: var(--brass) !important;
+    box-shadow: 0 0 0 2px var(--brass-light) !important;
+}
+
+/* =========================================================
+   AI INTRO TEXT
+   ========================================================= */
+
+.ai-box {
+    color: var(--paper) !important;
+}
+
+.ai-box h1,
+.ai-box h2,
+.ai-box h3,
+.ai-box h4 {
+    color: var(--paper) !important;
+}
+
+.ai-box p {
+    color: rgba(251, 249, 244, 0.88) !important;
+}
+
+/* Don't force every div/span inside AI box to light text.
+   This was causing visibility problems with Streamlit widgets. */
+.ai-box div,
+.ai-box span {
+    color: inherit;
+}
+
+/* =========================================================
+   STREAMLIT MARKDOWN VISIBILITY
+   ========================================================= */
+
+.stMarkdown p,
+.stMarkdown li {
+    color: var(--ink);
+}
+
+.stMarkdown strong,
+.stMarkdown b {
+    color: var(--ink);
+}
+
+/* =========================================================
+   MOBILE CHAT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    [data-testid="stChatMessage"] {
+        padding: 14px 15px !important;
+        border-radius: 10px !important;
+    }
+
+    [data-testid="stChatMessage"] p {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+    }
+
+    [data-testid="stChatMessage"] li {
+        font-size: 14px !important;
+    }
+}
