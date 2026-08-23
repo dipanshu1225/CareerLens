@@ -1360,3 +1360,28 @@ div[data-testid="stVerticalBlockBorderWrapper"] > div {
     color: var(--brass) !important;
     fill: var(--brass) !important;
 }
+/* =========================================
+   JOB MATCHER INPUT ALIGNMENT
+   ========================================= */
+
+div[data-testid="stFileUploader"] {
+    min-height: 120px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+div[data-testid="stSelectbox"] {
+    min-height: 120px;
+}
+
+/* Select box itself */
+div[data-testid="stSelectbox"] div[role="combobox"] {
+    min-height: 45px;
+    border-radius: 10px;
+}
+
+/* File uploader drop area */
+div[data-testid="stFileUploaderDropzone"] {
+    min-height: 100px;
+    border-radius: 10px;
+}
