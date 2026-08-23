@@ -87,7 +87,7 @@ if uploaded_file:
 
 col1.metric("📊 Resume Score", f"{score}%",border =True)
 col2.metric("🧠 Skills Found", len(found_skills),border =True)
-col3.metric("💼 Experience",experience,"Fresher",border =True)
+col3.metric("💼 Experience",experience,border =True)
 
 #Resume Insights
 st.subheader("🔍 Resume Insights")
