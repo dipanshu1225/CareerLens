@@ -1361,40 +1361,34 @@ div[data-testid="stVerticalBlockBorderWrapper"] > div {
     fill: var(--brass) !important;
 }
 /* =========================================
-   JOB MATCHER INPUT ALIGNMENT
+   JOB MATCHER - INPUT ALIGNMENT
    ========================================= */
 
+/* Make both columns stretch equally */
+div[data-testid="stHorizontalBlock"] {
+    align-items: stretch;
+}
+
+/* File uploader */
 div[data-testid="stFileUploader"] {
-    min-height: 120px;
-    padding: 10px;
-    border-radius: 12px;
+    min-height: 125px;
 }
 
-div[data-testid="stSelectbox"] {
-    min-height: 120px;
-}
-
-/* Select box itself */
-div[data-testid="stSelectbox"] div[role="combobox"] {
-    min-height: 45px;
-    border-radius: 10px;
-}
-
-/* File uploader drop area */
+/* Upload dropzone */
 div[data-testid="stFileUploaderDropzone"] {
-    min-height: 100px;
-    border-radius: 10px;
-}
-/* Job Matcher Input Alignment */
-
-div[data-testid="stFileUploaderDropzone"] {
-    min-height: 100px !important;
-    height: 100px !important;
+    min-height: 95px !important;
     box-sizing: border-box;
+    border-radius: 12px !important;
 }
 
+/* Selectbox */
+div[data-testid="stSelectbox"] {
+    min-height: 125px;
+}
+
+/* Selectbox field */
 div[data-testid="stSelectbox"] div[role="combobox"] {
     min-height: 48px !important;
-    height: 48px !important;
     box-sizing: border-box;
+    border-radius: 12px !important;
 }
