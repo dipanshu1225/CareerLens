@@ -1310,3 +1310,53 @@ div[data-testid="stVerticalBlockBorderWrapper"] p {
 div[data-testid="stVerticalBlockBorderWrapper"] > div {
     border-radius: 14px !important;
 }
+/* =========================================================
+   CAREERLENS AI CHAT INPUT
+   ========================================================= */
+
+[data-testid="stChatInput"] {
+    background: #0f172a !important;
+    border: 1.5px solid var(--brass) !important;
+    border-radius: 14px !important;
+    padding: 4px !important;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15) !important;
+}
+
+/* Textbox */
+[data-testid="stChatInput"] textarea {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff !important;
+
+    border: none !important;
+    outline: none !important;
+
+    font-family: var(--font-body) !important;
+    font-size: 15px !important;
+}
+
+/* Placeholder text */
+[data-testid="stChatInput"] textarea::placeholder {
+    color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
+
+/* Focus effect */
+[data-testid="stChatInput"]:focus-within {
+    border-color: var(--brass) !important;
+    box-shadow:
+        0 0 0 2px rgba(197, 165, 90, 0.18),
+        0 8px 24px rgba(15, 23, 42, 0.18) !important;
+}
+
+/* Send button */
+[data-testid="stChatInput"] button {
+    color: #ffffff !important;
+}
+
+/* Send button icon */
+[data-testid="stChatInput"] button svg {
+    color: var(--brass) !important;
+    fill: var(--brass) !important;
+}
