@@ -2,9 +2,11 @@ import streamlit as st
 from pypdf import PdfReader
 from utils.parser import extract_text_from_pdf, detect_skills 
 
+#for style css
 with open("style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    
+
+#Page configuration    
 st.set_page_config(
     page_title = "RESUME ANALYZER | CareerLens AI",
     page_icon= "📄",
@@ -25,7 +27,7 @@ st.divider()
 found_skills = []
 resume_text = ""
 score = 0
-experience = "Not detected"
+experience = "Fresher"
 
 #RESUME UPLOAD
 #----------------------------------------------------------
@@ -41,6 +43,7 @@ if uploaded_file:
 
     # Detect skills
     found_skills = detect_skills(resume_text)
+    
 
     st.divider()   
 #================================================================
