@@ -5,7 +5,11 @@ from google import genai
 
 load_dotenv()
 
-# Get API key from local .env or Streamlit Cloud Secrets
+
+# ==========================================================
+# GET GEMINI API KEY
+# ==========================================================
+
 api_key = os.getenv("GEMINI_API_KEY")
 
 if not api_key:
@@ -17,36 +21,58 @@ if not api_key:
 if not api_key:
     raise ValueError("GEMINI_API_KEY is missing.")
 
-# Gemini client
+
+# ==========================================================
+# GEMINI CLIENT
+# ==========================================================
+
 client = genai.Client(api_key=api_key)
 
+
+# ==========================================================
+# CAREER AI
+# ==========================================================
 
 def ask_career_ai(question):
 
     prompt = f"""
-You are CareerLens AI, a helpful career assistant.
+You are CareerLens AI, an AI-powered career assistant.
 
-Help the user with:
+Your job is to help users with:
+
 - Resume improvement
-- Job searching
+- Job matching
 - Career planning
-- Skill development
+- Skill gaps
 - Interview preparation
-- Job descriptions
-- Data Science
 - Data Analytics
+- Data Science
 - Python
-- AI and Machine Learning
+- SQL
+- Excel
+- Power BI
+- Machine Learning
+- Artificial Intelligence
 
-Give practical, clear and beginner-friendly answers.
+Give practical, concise and beginner-friendly answers.
 
 User question:
 {question}
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
+    try:
 
-    return response.text
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+
+        return response.text
+
+    except Exception as e:
+
+        st.error("❌ Gemini API Error")
+
+        st.code(str(e))
+
+        return "I couldn't generate a response right now."
