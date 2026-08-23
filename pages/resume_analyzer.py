@@ -27,7 +27,7 @@ st.divider()
 found_skills = []
 resume_text = ""
 score = 0
-experience = "Fresher"
+experience = "_"
 
 #RESUME UPLOAD
 #----------------------------------------------------------
