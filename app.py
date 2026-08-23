@@ -96,7 +96,6 @@ with st.container(border=True):
         "prepare for interviews, and plan your career."
     )
 
-    st.divider()
 
     user_question = st.chat_input(
         "Ask CareerLens anything about your career..."
@@ -116,3 +115,5 @@ with st.container(border=True):
                 answer = ask_career_ai(user_question)
 
             st.write(answer)
+            
+            st.divider()
