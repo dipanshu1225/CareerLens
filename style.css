@@ -1360,35 +1360,4 @@ div[data-testid="stVerticalBlockBorderWrapper"] > div {
     color: var(--brass) !important;
     fill: var(--brass) !important;
 }
-/* =========================================
-   JOB MATCHER - INPUT ALIGNMENT
-   ========================================= */
 
-/* Make both columns stretch equally */
-div[data-testid="stHorizontalBlock"] {
-    align-items: stretch;
-}
-
-/* File uploader */
-div[data-testid="stFileUploader"] {
-    min-height: 125px;
-}
-
-/* Upload dropzone */
-div[data-testid="stFileUploaderDropzone"] {
-    min-height: 95px !important;
-    box-sizing: border-box;
-    border-radius: 12px !important;
-}
-
-/* Selectbox */
-div[data-testid="stSelectbox"] {
-    min-height: 125px;
-}
-
-/* Selectbox field */
-div[data-testid="stSelectbox"] div[role="combobox"] {
-    min-height: 48px !important;
-    box-sizing: border-box;
-    border-radius: 12px !important;
-}
