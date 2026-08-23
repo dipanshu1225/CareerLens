@@ -53,11 +53,6 @@ if uploaded_file:
 
 col1, col2,col3 = st.columns(3)
 if uploaded_file:
-
-    resume_text = extract_text_from_pdf(uploaded_file)
-
-    found_skills = detect_skills(resume_text)
-
     # Calculate score HERE
     score = 0
 
