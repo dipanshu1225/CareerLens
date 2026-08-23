@@ -1,0 +1,1105 @@
+/* Remove Streamlit header above CareerLens AI */
+header[data-testid="stHeader"] {
+    display: none;
+}
+
+/* Remove the extra top gap */
+.stApp > header {
+    display: none;
+}
+
+.block-container {
+    padding-top: 1rem !important;
+}
+.block-container {
+    padding-top: 0.5rem !important;
+}
+/* =========================================================
+   CAREERLENS AI — EDITORIAL LENS UI
+   WARM PAPER + INK NAVY + BRASS FOCUS ACCENT
+   Signature motif: concentric "lens iris" rings —
+   a literal focus, echoed in the hero, the score dial,
+   and every feature icon.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    /* ---- core palette ---- */
+    --ink: #12172b;
+    --ink-soft: #2a3149;
+    --paper: #fbf9f4;
+    --paper-warm: #f4efe3;
+    --paper-line: #e7e0cf;
+
+    --brass: #c08829;
+    --brass-dark: #93671c;
+    --brass-light: #f3e6c8;
+    --brass-border: #e3c98d;
+
+    --indigo: #2a4b8d;
+    --indigo-dark: #1c3866;
+    --indigo-light: #e8edf7;
+
+    --text: var(--ink);
+    --muted: #6b6456;
+    --muted-cool: #5b6472;
+
+    --white: #ffffff;
+    --bg: var(--paper);
+    --border: var(--paper-line);
+
+    --green: #3f7d58;
+    --green-bg: #eef5ee;
+    --green-border: #c7dfc9;
+    --red: #a8432f;
+    --red-bg: #fbeeea;
+    --red-border: #eccabd;
+
+    --shadow: 0 10px 28px rgba(18, 23, 43, 0.08);
+    --shadow-brass: 0 16px 36px rgba(192, 136, 41, 0.20);
+    --shadow-sm: 0 4px 12px rgba(18, 23, 43, 0.06);
+
+    --gradient: linear-gradient(135deg, #12172b, #2a4b8d);
+    --gradient-brass: linear-gradient(135deg, #c08829, #d9a53f);
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.stApp {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(18, 23, 43, 0.012) 0px,
+            rgba(18, 23, 43, 0.012) 1px,
+            transparent 1px,
+            transparent 3px
+        ),
+        radial-gradient(circle at 8% 8%, rgba(192, 136, 41, 0.07), transparent 30%),
+        radial-gradient(circle at 96% 6%, rgba(42, 75, 141, 0.06), transparent 32%),
+        linear-gradient(180deg, #fdfcf8 0%, #f8f5ec 100%);
+}
+
+.stApp {
+    font-family: var(--font-body);
+    color: var(--text);
+}
+
+.block-container {
+    max-width: 1280px;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+}
+
+
+/* =========================================================
+   BRAND HEADER
+   ========================================================= */
+
+.brand-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.brand-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 18px;
+    border-radius: 50px;
+    background: var(--paper);
+    color: var(--brass-dark);
+    border: 1px solid var(--brass-border);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    box-shadow: 0 5px 15px rgba(192, 136, 41, 0.10);
+}
+
+.brand-badge::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brass);
+    box-shadow: 0 0 0 3px var(--brass-light);
+}
+
+.main-title {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 700;
+    font-optical-sizing: auto;
+    letter-spacing: -1.5px;
+    color: var(--ink);
+    margin: 0;
+}
+
+.main-title span {
+    color: var(--brass-dark);
+    font-style: italic;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 16px;
+    margin-top: 10px;
+    letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   HERO — lens iris motif
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--ink) 0%, var(--indigo-dark) 100%);
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    padding: 46px;
+    margin-bottom: 35px;
+    box-shadow: var(--shadow);
+}
+
+/* concentric lens rings, top-right — the signature element */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 1px solid rgba(243, 230, 200, 0.14);
+    right: -120px;
+    top: -140px;
+    box-shadow:
+        0 0 0 28px rgba(243, 230, 200, 0.05),
+        0 0 0 56px rgba(243, 230, 200, 0.035),
+        0 0 0 84px rgba(243, 230, 200, 0.02);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--brass);
+    right: 62px;
+    top: 32px;
+    box-shadow: 0 0 20px 4px rgba(192, 136, 41, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--paper);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: rgba(251, 249, 244, 0.72);
+    max-width: 700px;
+    line-height: 1.75;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+   ========================================================= */
+
+.feature-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 26px;
+    min-height: 180px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.25s ease;
+    overflow: hidden;
+}
+
+.feature-card::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--paper-line);
+    right: -40px;
+    bottom: -40px;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--brass-border);
+    box-shadow: var(--shadow-brass);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink);
+    color: var(--brass);
+    border-radius: 50%;
+    font-size: 22px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 4px var(--brass-light);
+}
+
+.feature-card h3 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   UNIVERSAL CARD
+   ========================================================= */
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    border-color: var(--brass-border);
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 38px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+}
+
+.section-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 56px;
+    height: 2px;
+    background: var(--brass);
+}
+
+.section-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--brass);
+    font-size: 20px;
+    box-shadow: 0 0 0 4px var(--brass-light);
+}
+
+.section-header h2 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.section-header p {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin: 3px 0 0;
+    font-family: var(--font-mono);
+}
+
+
+/* =========================================================
+   RESUME ANALYZER
+   ========================================================= */
+
+.resume-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.resume-box:hover {
+    border-color: var(--brass-border);
+    box-shadow: var(--shadow);
+}
+
+.resume-upload {
+    background: var(--paper-warm);
+    border: 1.5px dashed var(--brass-border);
+    border-radius: 8px;
+    padding: 36px;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.resume-upload:hover {
+    background: var(--brass-light);
+    border-color: var(--brass);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STREAMLIT FILE UPLOADER
+   ========================================================= */
+
+[data-testid="stFileUploader"] {
+    background: var(--paper-warm);
+    border: 1.5px dashed var(--brass-border);
+    border-radius: 8px;
+    padding: 18px;
+    transition: 0.25s ease;
+}
+
+[data-testid="stFileUploader"]:hover {
+    background: var(--brass-light);
+    border-color: var(--brass);
+    box-shadow: 0 8px 22px rgba(192, 136, 41, 0.12);
+}
+
+
+/* =========================================================
+   JOB CARD
+   ========================================================= */
+
+.job-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--indigo);
+    border-radius: 4px;
+    padding: 22px;
+    margin-bottom: 15px;
+    transition: 0.25s ease;
+}
+
+.job-card:hover {
+    transform: translateX(5px);
+    border-left-color: var(--brass);
+    box-shadow: var(--shadow-sm);
+}
+
+.job-title {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.job-company {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-top: 5px;
+    font-family: var(--font-mono);
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skill-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 7px 15px;
+    margin: 4px;
+    background: var(--indigo-light);
+    color: var(--indigo-dark);
+    border: 1px solid #c7d5ec;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.skill-badge:hover {
+    background: var(--indigo);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.missing-skill {
+    display: inline-block;
+    padding: 7px 15px;
+    margin: 4px;
+    background: var(--red-bg);
+    color: var(--red);
+    border: 1px solid var(--red-border);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MATCH SCORE — the lens dial
+   ========================================================= */
+
+.score-card {
+    text-align: center;
+    background: linear-gradient(135deg, var(--ink) 0%, var(--indigo-dark) 100%);
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    padding: 40px 35px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* aperture rings framing the number, like a lens focusing in */
+.score-card::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 1px dashed rgba(243, 230, 200, 0.25);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.score-card::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 1px solid rgba(243, 230, 200, 0.18);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.score-number {
+    font-family: var(--font-mono);
+    font-size: 62px;
+    font-weight: 700;
+    color: var(--brass);
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.score-label {
+    font-family: var(--font-display);
+    color: var(--paper);
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.score-description {
+    color: rgba(251, 249, 244, 0.65);
+    font-size: 13.5px;
+    margin-top: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+[data-testid="stMetric"] {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--brass);
+    border-radius: 4px;
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    transition: 0.2s ease;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--muted) !important;
+    font-family: var(--font-mono) !important;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--ink) !important;
+    font-family: var(--font-display) !important;
+    font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.stButton > button {
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 4px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 6px 16px rgba(18, 23, 43, 0.20);
+    transition: 0.2s ease;
+}
+
+.stButton > button:hover {
+    background: var(--brass-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(192, 136, 41, 0.30);
+}
+
+.stButton > button:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.stTextInput input,
+.stTextArea textarea {
+    background: var(--white) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 4px !important;
+    padding: 12px !important;
+    font-family: var(--font-body) !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--brass) !important;
+    box-shadow: 0 0 0 1px var(--brass) !important;
+}
+
+
+/* =========================================================
+   SELECTBOX
+   ========================================================= */
+
+[data-baseweb="select"] {
+    background: var(--white) !important;
+    border-radius: 4px !important;
+}
+
+[data-baseweb="select"] > div {
+    border-radius: 4px !important;
+    border-color: var(--border) !important;
+}
+
+
+/* =========================================================
+   AI ASSISTANT
+   ========================================================= */
+
+.ai-box {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--indigo-dark) 100%);
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    color: var(--paper);
+}
+
+.ai-box p, .ai-box span, .ai-box div {
+    color: rgba(251, 249, 244, 0.78);
+}
+
+.ai-icon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-brass);
+    color: var(--ink);
+    border-radius: 50%;
+    font-size: 22px;
+    box-shadow: 0 8px 20px rgba(192, 136, 41, 0.35);
+}
+
+
+/* =========================================================
+   RECOMMENDATION
+   ========================================================= */
+
+.recommendation {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--brass);
+    border-radius: 4px;
+    padding: 20px;
+    margin: 12px 0;
+    box-shadow: var(--shadow-sm);
+    transition: 0.2s ease;
+}
+
+.recommendation:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.stProgress > div > div > div {
+    background: var(--gradient-brass);
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   EXPANDER
+   ========================================================= */
+
+[data-testid="stExpander"] {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+section[data-testid="stSidebar"] {
+    background: var(--paper-warm);
+    border-right: 1px solid var(--border);
+    box-shadow: 5px 0 20px rgba(18, 23, 43, 0.03);
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    font-family: var(--font-display);
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   STATUS BOXES
+   ========================================================= */
+
+.success-box {
+    background: var(--green-bg);
+    border: 1px solid var(--green-border);
+    border-left: 3px solid var(--green);
+    color: #2c5a3f;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.warning-box {
+    background: var(--brass-light);
+    border: 1px solid var(--brass-border);
+    border-left: 3px solid var(--brass-dark);
+    color: #7a5817;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.error-box {
+    background: var(--red-bg);
+    border: 1px solid var(--red-border);
+    border-left: 3px solid var(--red);
+    color: #8a3423;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+
+
+
+/* =========================================================
+   NATIVE STREAMLIT PAGE ELEMENTS
+   Job Matcher / Skill Gap Analyzer / Resume Analyzer all use
+   plain st.* components (no custom HTML), so these target
+   Streamlit's own DOM directly and carry the same lens theme.
+   ========================================================= */
+
+/* ---- Page title (st.title) ---- */
+.stApp h1 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--brass);
+    margin-bottom: 6px;
+}
+
+/* intro line under the title (st.write) */
+.stApp h1 + div [data-testid="stMarkdownContainer"] p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* ---- Section headers (st.subheader / st.header) ---- */
+.stApp h2, .stApp h3 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+/* ---- st.divider ---- */
+.stApp hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, var(--brass) 0%, var(--paper-line) 45%, transparent 100%);
+    margin: 26px 0;
+}
+
+
+/* ---- Buttons: secondary (e.g. "Back to Dashboard") vs primary (e.g. "Analyze Match") ----
+   The structural selector (first .stButton on the page) is a fallback for
+   Streamlit versions where the kind/testid attributes below don't match —
+   "Back to Dashboard" is always the first st.button() call on every page. */
+.stButton > button[kind="secondary"],
+[data-testid="stBaseButton-secondary"],
+[data-testid="stVerticalBlock"] > [data-testid="stElementContainer"]:first-of-type .stButton > button {
+    background: var(--paper-warm);
+    color: var(--ink);
+    border: 1px solid var(--brass-border) !important;
+    box-shadow: none;
+    font-weight: 600;
+}
+
+.stButton > button[kind="secondary"]:hover,
+[data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stVerticalBlock"] > [data-testid="stElementContainer"]:first-of-type .stButton > button:hover {
+    background: var(--ink);
+    border-color: var(--ink) !important;
+    color: var(--brass);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.stButton > button[kind="primary"],
+[data-testid="stBaseButton-primary"] {
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+}
+
+.stButton > button[kind="primary"]:hover,
+[data-testid="stBaseButton-primary"]:hover {
+    background: var(--brass-dark);
+    color: var(--white);
+}
+
+
+/* ---- Alert boxes: st.success / st.info / st.warning / st.error ----
+   Covers both current and slightly older Streamlit testid naming
+   for resilience across versions. */
+
+[data-testid="stAlertContentSuccess"],
+[data-testid="stNotificationContentSuccess"],
+[data-testid="stAlert"]:has([data-testid="stAlertContentSuccess"]) {
+    background: var(--green-bg);
+    border: 1px solid var(--green-border);
+    border-left: 3px solid var(--green);
+    border-radius: 4px;
+    color: #2c5a3f;
+}
+
+[data-testid="stAlertContentInfo"],
+[data-testid="stNotificationContentInfo"] {
+    background: var(--indigo-light);
+    border: 1px solid #c7d5ec;
+    border-left: 3px solid var(--indigo);
+    border-radius: 4px;
+    color: var(--indigo-dark);
+}
+
+[data-testid="stAlertContentWarning"],
+[data-testid="stNotificationContentWarning"] {
+    background: var(--brass-light);
+    border: 1px solid var(--brass-border);
+    border-left: 3px solid var(--brass-dark);
+    border-radius: 4px;
+    color: #7a5817;
+}
+
+[data-testid="stAlertContentError"],
+[data-testid="stNotificationContentError"] {
+    background: var(--red-bg);
+    border: 1px solid var(--red-border);
+    border-left: 3px solid var(--red);
+    border-radius: 4px;
+    color: #8a3423;
+}
+
+[data-testid="stAlertContentSuccess"] p,
+[data-testid="stAlertContentInfo"] p,
+[data-testid="stAlertContentWarning"] p,
+[data-testid="stAlertContentError"] p,
+[data-testid="stNotificationContentSuccess"] p,
+[data-testid="stNotificationContentInfo"] p,
+[data-testid="stNotificationContentWarning"] p,
+[data-testid="stNotificationContentError"] p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* ---- Match / skill-gap / resume score line (st.metric already
+   styled globally above — this refines the 3-column row spacing) ---- */
+[data-testid="stHorizontalBlock"] [data-testid="stMetric"] {
+    text-align: center;
+}
+
+
+/* ---- Detected / missing skill lines (st.write("• Skill")) ---- */
+[data-testid="stMarkdownContainer"] p {
+    line-height: 1.7;
+}
+
+
+/* ---- st.text_area used for "View Extracted Resume Text" ---- */
+.stTextArea textarea {
+    font-family: var(--font-mono) !important;
+    font-size: 13px !important;
+    background: var(--paper-warm) !important;
+}
+
+
+/* ---- st.expander ("View Extracted Resume Text") ---- */
+[data-testid="stExpander"] summary {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--ink);
+}
+
+[data-testid="stExpander"] summary:hover {
+    color: var(--brass-dark);
+}
+
+
+/* ---- Selectbox label + file uploader label ---- */
+.stSelectbox label p,
+[data-testid="stFileUploader"] label p {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 14px;
+}
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 25px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brass-border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brass);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .main-title {
+        font-size: 34px;
+        letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 26px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero::before {
+        width: 220px;
+        height: 220px;
+        right: -100px;
+        top: -110px;
+    }
+
+    .resume-box,
+    .skill-section,
+    .ai-box {
+        padding: 20px;
+    }
+
+    .score-number {
+        font-size: 46px;
+    }
+
+    .score-card::before {
+        width: 170px;
+        height: 170px;
+    }
+
+    .score-card::after {
+        width: 125px;
+        height: 125px;
+    }
+
+    .page-header {
+        padding: 22px;
+    }
+
+    .page-header h1,
+    .page-header h2 {
+        font-size: 21px;
+    }
+
+    .job-matcher-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skillgap-row {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 14px 16px;
+    }
+
+    .skillgap-name {
+        flex: 1 1 100%;
+    }
+
+    .skillgap-bar-track {
+        flex: 1 1 auto;
+    }
+}
